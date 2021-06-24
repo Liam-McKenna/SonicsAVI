@@ -1,27 +1,50 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 //components
 import Card from "./Card";
+//Database
+import ServicesData from "../api/axios-services.js";
 
 const CardsSection = () => {
+  //state data for all Services
+  const [services, setServices] = useState([]);
+  //get all data from DB Axois
+  useEffect(() => {
+    retrieveServices();
+  }, []);
+
+  const retrieveServices = () => {
+    ServicesData.getAll()
+      .then((response) => {
+        setServices(response.data.services);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
   return (
     <CardsContainer>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {services.map((service) => {
+        return (
+          <Link to={"/service/" + service.serviceName}>
+            <Card
+              key={service.serviceName}
+              serviceName={service.serviceName}
+              serviceThumbnail={service.ServiceThumbnail}
+            />
+          </Link>
+        );
+      })}
     </CardsContainer>
   );
 };
 
 //CSS Vars
-const secondaryColor = "#1d2034";
 
 const CardsContainer = styled.div`
+  margin-top: 1rem;
   width: 70rem;
   max-width: 70%;
   display: flex;
@@ -29,7 +52,6 @@ const CardsContainer = styled.div`
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  background-color: ${secondaryColor};
   border-radius: 1rem;
 `;
 

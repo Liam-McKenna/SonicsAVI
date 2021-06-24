@@ -10,7 +10,6 @@ const Contact = () => {
 };
 
 const ContactContainer = styled.div`
-  width: 100%;
   margin-left: 5rem;
 `;
 

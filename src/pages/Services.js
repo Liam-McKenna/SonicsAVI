@@ -9,9 +9,7 @@ const Services = () => {
   return (
     <ServiceContainer>
       <IntroSection />
-
       <CardsSection />
-
       {/* Partners Section */}
     </ServiceContainer>
   );

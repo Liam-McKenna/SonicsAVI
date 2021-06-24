@@ -48,6 +48,8 @@ const transitionTime = "200ms ease";
 //styled components
 const Nav = styled.div`
   width: 5rem;
+  position: fixed;
+  z-index: 10;
 
   .links {
     text-decoration: none;

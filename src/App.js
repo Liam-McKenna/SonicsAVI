@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import GlobalStyles from "./components/GlobalStyles";
 //pages
 import Services from "./pages/Services";
+import ServiceFocus from "./pages/ServiceFocus";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -19,6 +20,9 @@ function App() {
       <Switch>
         <Route path="/" exact>
           <Services />
+        </Route>
+        <Route path="/service/:id">
+          <ServiceFocus />
         </Route>
         <Route path="/projects">
           <Projects />
