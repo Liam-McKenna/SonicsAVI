@@ -18,7 +18,7 @@ body{
     background: ${primaryColor};
 }
 
-h1, h3 {
+h1, h2 , h3, span{
     color: white;
   }
 

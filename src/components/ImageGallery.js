@@ -1,6 +1,7 @@
 import { React, useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import arrow from "../img/right-arrow.svg";
+import { v4 as uuidv4 } from "uuid";
 
 const ImageGallery = ({ service }) => {
   //useState
@@ -8,6 +9,7 @@ const ImageGallery = ({ service }) => {
   const [galleryPaths, setGalleryPaths] = useState([]);
   //useRef
   const modelRef = useRef(null);
+  const galleryImgRef = useRef(null);
 
   // if the data isn't available(service.ServiceThumbnail),
   // we'll delay our functions to require images. Require can't be called if the paths aren't statically available.
@@ -29,6 +31,7 @@ const ImageGallery = ({ service }) => {
           return require(`../img/${img}`).default;
         })
       );
+      setThumbnailPath(require(`../img/${service.ServiceGallery[0]}`).default);
     } catch (e) {
       console.error(e);
     }
@@ -37,6 +40,8 @@ const ImageGallery = ({ service }) => {
   //
   const imgSelectEventHandler = (e) => {
     setThumbnailPath(e.target.getAttribute("src"));
+
+    // e.target.className += " galleryImg galleryImgSelected";
   };
 
   const modalEventHandler = () => {
@@ -60,10 +65,12 @@ const ImageGallery = ({ service }) => {
             {galleryPaths.map((path) => {
               return (
                 <img
+                  key={uuidv4()}
                   src={path}
                   alt=""
                   className="galleryImg"
                   onClick={imgSelectEventHandler}
+                  ref={galleryImgRef}
                 />
               );
             })}{" "}
@@ -71,12 +78,14 @@ const ImageGallery = ({ service }) => {
           <img src={arrow} alt="" className="right" />
         </div>
 
-        <img
-          src={thumbnailPath}
-          alt=""
-          id="thumbnail"
-          onClick={modalEventHandler}
-        />
+        <div className="thumbnailContainer">
+          <div className="gradient" onClick={modalEventHandler}></div>
+          <img
+            src={thumbnailPath}
+            alt="thumbnailimg"
+            onClick={modalEventHandler}
+          />
+        </div>
       </div>
 
       <div
@@ -85,13 +94,14 @@ const ImageGallery = ({ service }) => {
         ref={modelRef}
         onClick={modalEventHandler}
       >
-        <span class="close">&times;</span>
+        <span className="close">&times;</span>
         <img className="modalImg" src={thumbnailPath} alt="" />
       </div>
     </ImageGalleryContainer>
   );
 };
 
+const transitionTime = "200ms ease";
 const ImageGalleryContainer = styled.div`
   width: 100%;
 
@@ -109,9 +119,9 @@ const ImageGalleryContainer = styled.div`
       bottom: 0;
       width: 100%;
       display: flex;
-
       justify-content: center;
       align-items: center;
+      z-index: 2;
 
       .galleryImages {
         display: flex;
@@ -123,6 +133,22 @@ const ImageGalleryContainer = styled.div`
         width: 3rem;
         margin: 0rem 0.3rem 0rem 0.3rem;
         /* object-fit: contain; */
+        border-radius: 0.5rem;
+        transition: ${transitionTime};
+        &:hover {
+          transition: ${transitionTime};
+          transform: scale(1.1);
+        }
+        &:active {
+          transition: ${transitionTime};
+          transform: scale(0.9);
+        }
+      }
+
+      .galleryImgSelected {
+        transform: scale(1.1);
+        border-style: solid;
+        border-color: white;
       }
 
       .left {
@@ -138,10 +164,33 @@ const ImageGalleryContainer = styled.div`
     }
   }
 
+  .thumbnailContainer {
+    height: 40vh;
+    position: relative;
+
+    .gradient {
+      z-index: 1;
+      position: absolute;
+      height: 40vh;
+      width: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(21, 23, 39, 0) 57.73%,
+        #151727 96.08%
+      );
+    }
+
+    img {
+      position: absolute;
+      height: 40vh;
+      object-fit: cover;
+    }
+  }
+
   .modalContainerOff {
     display: none;
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 2; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;

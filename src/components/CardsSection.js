@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 //components
 import Card from "./Card";
 //Database
@@ -28,9 +29,9 @@ const CardsSection = () => {
     <CardsContainer>
       {services.map((service) => {
         return (
-          <Link to={"/service/" + service.serviceName}>
+          <Link key={uuidv4()} to={"/service/" + service.serviceName}>
             <Card
-              key={service.serviceName}
+              key={uuidv4()}
               serviceName={service.serviceName}
               serviceThumbnail={service.ServiceThumbnail}
             />

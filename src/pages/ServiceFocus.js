@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import ServicesData from "../api/axios-services.js";
 //components
 import ImageGallery from "../components/ImageGallery";
+import SpacerBar from "../components/SpacerBar";
 
 const ServiceFocus = () => {
   //currentUrl
@@ -33,6 +34,25 @@ const ServiceFocus = () => {
     <ServiceFocusContainer>
       <ImageGallery service={service} />
       <h1>{service.serviceName}</h1>
+      <SpacerBar />
+      <span className="serviceText">
+        {service.serviceText &&
+          service.serviceText.split("<br />").map((str) => (
+            <p>
+              {str}
+              <br />
+              <br />
+            </p>
+          ))}
+      </span>
+      <SpacerBar />
+
+      {/* TO DO - build project card and reuse here */}
+      <div className="projectsSection">
+        <div className="project">projectCard</div>
+        <div className="project">projectCard</div>
+        <div className="project">projectCard</div>
+      </div>
     </ServiceFocusContainer>
   );
 };
@@ -43,6 +63,15 @@ const ServiceFocusContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .serviceText {
+    max-width: 90rem;
+    padding: 0rem 1.5rem 0rem 1.5rem;
+    text-align: center;
+  }
+
+  h1 {
+    padding: 1rem 0rem 0rem 0rem;
+  }
 `;
 
 export default ServiceFocus;
