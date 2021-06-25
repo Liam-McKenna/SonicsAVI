@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-// import thumbnail_1 from "../img/thumbnail_1.png";
 
 const Card = ({ serviceName, serviceThumbnail }) => {
-  console.log("Card thumbnail: " + serviceThumbnail);
+  // console.log("Card thumbnail: " + serviceThumbnail);
 
   return (
     <CardContainer>

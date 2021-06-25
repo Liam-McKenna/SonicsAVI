@@ -1,103 +1,162 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import arrow from "../img/right-arrow.svg";
 
 const ImageGallery = ({ service }) => {
-  const [imagePath, setImagePath] = useState("");
+  //useState
+  const [thumbnailPath, setThumbnailPath] = useState("");
   const [galleryPaths, setGalleryPaths] = useState([]);
+  //useRef
+  const modelRef = useRef(null);
 
   useEffect(() => {
     if (service.ServiceThumbnail) {
       getImagePaths();
+      console.log(galleryPaths);
     }
   }, [service]);
 
   const getImagePaths = () => {
     try {
-      setImagePath(require(`../img/${service.ServiceThumbnail}`).default);
-
       setGalleryPaths(
         service.ServiceGallery.map((img) => {
           return require(`../img/${img}`).default;
         })
       );
+      console.log(galleryPaths);
+      setThumbnailPath(require(`../img/${service.ServiceThumbnail}`).default);
     } catch (e) {
       console.error(e);
     }
   };
 
   const imgSelect = (e) => {
-    // console.log(e);
-    // console.log("this");
-    // console.log(e.target.getAttribute("src"));
-    setImagePath(e.target.getAttribute("src"));
+    setThumbnailPath(e.target.getAttribute("src"));
+  };
+
+  const modalEventHandler = () => {
+    console.log(modelRef.current.className);
+    if (modelRef.current.className === "modalContainerOff") {
+      modelRef.current.className = "modalContainerOff modalContainerOn";
+      // console.log("turn On");
+    } else {
+      // console.log("turn off");
+      modelRef.current.className = "modalContainerOff";
+    }
   };
 
   return (
     <ImageGalleryContainer>
-      <div className="galleryControl">
-        <img src={arrow} alt="" className="left" />
-
-        <div className="galleryImages">
-          {" "}
-          {galleryPaths.map((path) => {
-            return (
-              <img
-                src={path}
-                alt=""
-                className="galleryImg"
-                onClick={imgSelect}
-              />
-            );
-          })}{" "}
+      <div className="galleryContainer">
+        <div className="galleryControl">
+          <img src={arrow} alt="" className="left" />
+          <div className="galleryImages">
+            {" "}
+            {galleryPaths.map((path) => {
+              return (
+                <img
+                  src={path}
+                  alt=""
+                  className="galleryImg"
+                  onClick={imgSelect}
+                />
+              );
+            })}{" "}
+          </div>
+          <img src={arrow} alt="" className="right" />
         </div>
-        <img src={arrow} alt="" className="right" />
+
+        <img
+          src={thumbnailPath}
+          alt=""
+          id="thumbnail"
+          onClick={modalEventHandler}
+        />
       </div>
 
-      <img src={imagePath} alt="" />
+      <div
+        className="modalContainerOff"
+        id="ModalContainer"
+        ref={modelRef}
+        onClick={modalEventHandler}
+      >
+        <span class="close">&times;</span>
+        <img className="modalImg" src={thumbnailPath} alt="" />
+      </div>
     </ImageGalleryContainer>
   );
 };
 
 const ImageGalleryContainer = styled.div`
-  position: relative;
   width: 100%;
-  height: 40vh;
-  overflow: hidden;
-  img {
-    width: 100%;
+
+  .galleryContainer {
+    height: 40vh;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    .galleryControl {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      .galleryImages {
+        display: flex;
+        margin: 0.3rem;
+      }
+
+      .galleryImg {
+        height: 3rem;
+        width: 3rem;
+        margin: 0rem 0.3rem 0rem 0.3rem;
+        /* object-fit: contain; */
+      }
+
+      .left {
+        height: 3rem;
+        width: 3rem;
+        transform: rotate(180deg);
+        color: red;
+      }
+      .right {
+        height: 3rem;
+        width: 3rem;
+      }
+    }
   }
 
-  .galleryControl {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: flex;
+  .modalContainerOff {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
 
-    justify-content: center;
-    align-items: center;
+    .modalImg {
+      margin: auto;
+      display: block;
+      max-height: 90vh;
+      max-width: 90vh;
+      /* max-width: 700px; */
+    }
+  }
 
-    .galleryImages {
-      display: flex;
-      margin: 0.3rem;
-    }
-
-    .galleryImg {
-      height: 3rem;
-      width: 3rem;
-      margin: 0rem 0.3rem 0rem 0.3rem;
-    }
-
-    .left {
-      height: 3rem;
-      width: 3rem;
-      transform: rotate(180deg);
-      color: red;
-    }
-    .right {
-      height: 3rem;
-      width: 3rem;
-    }
+  .modalContainerOn {
+    display: block;
   }
 `;
 
