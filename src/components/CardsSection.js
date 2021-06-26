@@ -47,7 +47,7 @@ const CardsSection = () => {
 const CardsContainer = styled.div`
   margin-top: 1rem;
   width: 70rem;
-  max-width: 70%;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: row;

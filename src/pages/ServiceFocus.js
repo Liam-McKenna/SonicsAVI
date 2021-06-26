@@ -45,6 +45,7 @@ const ServiceFocus = () => {
             </p>
           ))}
       </span>
+      <h2>Related Projects</h2>
       <SpacerBar />
 
       {/* TO DO - build project card and reuse here */}
@@ -71,6 +72,7 @@ const ServiceFocusContainer = styled.div`
 
   h1 {
     padding: 1rem 0rem 0rem 0rem;
+    text-align: center;
   }
 `;
 

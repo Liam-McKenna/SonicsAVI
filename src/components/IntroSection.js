@@ -23,7 +23,7 @@ const BrightBlue = "#00FFFF";
 
 const IntroContainer = styled.div`
   width: 70rem;
-  max-width: 70%;
+  max-width: 90%;
   display: flex;
   justify-content: center;
   flex-direction: column;

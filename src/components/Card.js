@@ -23,8 +23,8 @@ const transitionTime = "200ms ease";
 const CardContainer = styled.div`
   position: relative;
   margin: 0.5rem;
-  width: 14rem;
-  height: 14rem;
+  width: 16rem;
+  height: 16rem;
   border-radius: 10px;
   overflow: hidden;
   transition: ${transitionTime};

@@ -7,8 +7,8 @@ const SpacerBar = () => {
 
 const BarContainer = styled.div`
   margin: 1rem;
-  height: 0.5rem;
-  width: 6rem;
+  height: 0.3rem;
+  width: 4rem;
   border-radius: 10rem;
   background-color: #00ffff;
 `;
