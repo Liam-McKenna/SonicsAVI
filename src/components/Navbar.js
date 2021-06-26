@@ -66,6 +66,9 @@ const Nav = styled.div`
     position: fixed;
     background-color: ${secondaryColor};
     border-radius: 0rem 2rem 2rem 0rem;
+    .navText {
+      font-weight: bold;
+    }
     &:hover {
       transition: ${transitionTime};
       width: 16rem;
@@ -96,6 +99,9 @@ const Nav = styled.div`
         color: ${heavyBlue};
       }
     }
+    &:active {
+      text-decoration: none;
+    }
     img {
       transition: ${transitionTime};
       width: 90%;
@@ -111,10 +117,60 @@ const Nav = styled.div`
 
   .navText {
     transition: ${transitionTime};
-    /* display: none; */
     visibility: hidden;
-    padding: 1rem;
-    list-style: none;
+  }
+
+  //mobile settings
+  @media (max-width: 768px) {
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    .navText {
+      transition: ${transitionTime};
+      /* display: none; */
+      visibility: visible;
+    }
+
+    .links {
+      flex-direction: row;
+      border-radius: 0;
+      height: 6rem;
+      width: 100%;
+      bottom: 0;
+      &:hover {
+        transition: ${transitionTime};
+        width: 100%;
+        .navLink {
+          display: flex;
+          flex-direction: column;
+        }
+        .navText {
+          visibility: visible;
+          color: white;
+          font-weight: bold;
+        }
+      }
+    }
+    .navLink {
+      justify-content: center;
+      flex-direction: column;
+      height: 6rem;
+      padding: 0rem;
+      &:hover {
+        background-color: ${secondaryColor};
+      }
+
+      img {
+        width: 0;
+        width: 4rem;
+        &:hover {
+          width: 4.5rem;
+        }
+        &:active {
+          /* width: 4rem; */
+        }
+      }
+    }
   }
 `;
 
