@@ -210,7 +210,7 @@ const Nav = styled.div`
     display: flex;
     .navText {
       transition: ${transitionTime};
-      /* display: none; */
+      margin-left: 0rem;
       visibility: visible;
     }
     .links {
