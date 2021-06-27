@@ -55,6 +55,16 @@ const CardContainer = styled.div`
   img {
     height: 100%;
   }
+
+  @media (max-width: 768px) {
+    width: 9rem;
+    height: 9rem;
+    h3 {
+      font-size: 0.7rem;
+      bottom: 0.5rem;
+      left: 0.5rem;
+    }
+  }
 `;
 
 export default Card;
