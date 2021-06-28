@@ -3,14 +3,17 @@ import styled from "styled-components";
 
 //components
 import IntroSection from "../components/IntroSection";
-import CardsSection from "../components/CardsSection";
+import ServiceCardsSection from "../components/ServiceCardsSection";
 import PartnersSection from "../components/PartnersSection";
 
 const Services = () => {
+  const introTitle = "Audio Visual Installations & Services.";
+  const introText =
+    " This is an introduction into the services offered by Sonics AVI which inludes this and that. Make extraordinary technology decisions with veteran experience. something else about Sonics services";
   return (
     <ServiceContainer>
-      <IntroSection />
-      <CardsSection />
+      <IntroSection introTitle={introTitle} introText={introText} />
+      <ServiceCardsSection />
       <PartnersSection />
     </ServiceContainer>
   );

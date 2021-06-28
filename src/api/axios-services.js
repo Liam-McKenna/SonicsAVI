@@ -1,29 +1,29 @@
-import http from "../api/axios-common.js";
+// import http from "../api/axios-heroku.js";
+import { httpServices } from "../api/axios-localhost.js";
 //get services from database
 
 class ServicesData {
+  //Get
   getAll(page = 0) {
-    return http.get();
+    return httpServices.get();
   }
-
+  //Get Single
   getByName(name) {
-    // name.replaceAll(" ", "+").replaceAll("&", "%26");
-
-    return http.get(
+    return httpServices.get(
       `?serviceName=${name.replaceAll(" ", "+").replaceAll("&", "%26")}`
     );
   }
-
+  //Post
   createNewService(data) {
-    return http.post(data);
+    return httpServices.post(data);
   }
-
+  //Update
   updateById(data) {
-    return http.put(data);
+    return httpServices.put(data);
   }
-
+  //Delete
   deleteById(data) {
-    return http.delete(data);
+    return httpServices.delete(data);
   }
 }
 

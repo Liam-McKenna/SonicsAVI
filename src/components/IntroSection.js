@@ -1,17 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const IntroSection = () => {
+const IntroSection = ({ introTitle, introText }) => {
   return (
     <IntroContainer>
       <div className="introSection">
-        <h2>Audio visual installations and services.</h2>
+        <h2>{introTitle}</h2>
         <div className="separatorBar"></div>
-        <p>
-          This is an introduction into the services offered by Sonics AVI which
-          inludes this and that. Make extraordinary technology decisions with
-          veteran experience. something else about Sonics services{" "}
-        </p>
+        <p>{introText}</p>
       </div>
     </IntroContainer>
   );
