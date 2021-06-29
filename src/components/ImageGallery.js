@@ -3,7 +3,7 @@ import styled from "styled-components";
 import arrow from "../img/right-arrow.svg";
 import { v4 as uuidv4 } from "uuid";
 
-const ImageGallery = ({ service }) => {
+const ImageGallery = ({ gallery }) => {
   //useState
   const [thumbnailPath, setThumbnailPath] = useState("");
   const [galleryPaths, setGalleryPaths] = useState([]);
@@ -15,23 +15,23 @@ const ImageGallery = ({ service }) => {
   // we'll delay our functions to require images. Require can't be called if the paths aren't statically available.
   // useEffect triggers on any updates to the 'service' prop.
   useEffect(() => {
-    if (service.ServiceThumbnail) {
+    if (gallery.ServiceThumbnail) {
       getImagePaths();
     }
-  }, [service]);
+  }, [gallery]);
 
   const getImagePaths = () => {
     try {
-      console.log(service.ServiceThumbnail);
-      setThumbnailPath(service.ServiceThumbnail);
+      console.log(gallery.ServiceThumbnail);
+      setThumbnailPath(gallery.ServiceThumbnail);
       console.log(thumbnailPath);
 
       setGalleryPaths(
-        service.ServiceGallery.map((img) => {
+        gallery.ServiceGallery.map((img) => {
           return require(`../img/${img}`).default;
         })
       );
-      setThumbnailPath(require(`../img/${service.ServiceGallery[0]}`).default);
+      setThumbnailPath(require(`../img/${gallery.ServiceGallery[0]}`).default);
     } catch (e) {
       console.error(e);
     }

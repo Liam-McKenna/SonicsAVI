@@ -28,7 +28,11 @@ const ProjectCardsSection = () => {
     <ProjectsContainer>
       {projects.map((project) => {
         return (
-          <Link key={uuidv4()} to={"/project/" + project.name}>
+          <Link
+            key={uuidv4()}
+            to={"/project/" + project.name}
+            style={{ textDecoration: "none" }}
+          >
             <ProjectCard
               key={uuidv4()}
               projectName={project.name}

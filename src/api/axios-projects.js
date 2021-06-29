@@ -1,4 +1,4 @@
-// import http from "../api/axios-heroku.js";
+// import { httpServices } from "../api/axios-heroku.js";
 import { httpProjects } from "../api/axios-localhost.js";
 //get services from database
 
@@ -10,7 +10,7 @@ class ProjectsData {
   //Get Single
   getByName(name) {
     return httpProjects.get(
-      `?projectName=${name.replaceAll(" ", "+").replaceAll("&", "%26")}`
+      `?name=${name.replaceAll(" ", "+").replaceAll("&", "%26")}`
     );
   }
   //Post

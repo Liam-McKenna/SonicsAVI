@@ -1,29 +1,31 @@
 import { React, useState, useEffect } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 //Database
-import ServicesData from "../api/axios-services.js";
+import ProjectsData from "../api/axios-projects.js";
 //components
 import ImageGallery from "../components/ImageGallery";
 import SpacerBar from "../components/SpacerBar";
 
-const ServiceFocus = () => {
+const ProjectFocus = () => {
   //currentUrl
   const history = useHistory();
-  const url = history.location.pathname.replace("/service/", "");
+  const url = history.location.pathname.replace("/projects/", "");
   //state data for selected Service
-  const [service, setService] = useState([]);
+  const [project, setProject] = useState([]);
   //get all data from DB Axois
   // console.log(service);
 
   useEffect(() => {
-    retrieveService();
+    retrieveProject();
+    console.log(project);
   }, []);
 
-  const retrieveService = () => {
-    ServicesData.getByName(url)
+  const retrieveProject = () => {
+    ProjectsData.getByName(url)
       .then((response) => {
-        setService(response.data.services[0]);
+        setProject(response.data.projects[0]);
       })
       .catch((e) => {
         console.log(e);
@@ -31,21 +33,21 @@ const ServiceFocus = () => {
   };
 
   return (
-    <ServiceFocusContainer>
-      <ImageGallery gallery={service} />
-      <h1>{service.serviceName}</h1>
+    <ProjectFocusContainer>
+      {/* <ImageGallery project={project} /> */}
+      <h1>{project.name}</h1>
       <SpacerBar />
       <span className="serviceText">
-        {service.serviceText &&
-          service.serviceText.split("<br />").map((str) => (
-            <p>
+        {project.text &&
+          project.text.split("<br />").map((str) => (
+            <p key={uuidv4()}>
               {str}
               <br />
               <br />
             </p>
           ))}
       </span>
-      <h2>Related Projects</h2>
+      {/* <h2>Related Projects</h2> */}
       <SpacerBar />
 
       {/* TO DO - build project card and reuse here */}
@@ -54,11 +56,11 @@ const ServiceFocus = () => {
         <div className="project">projectCard</div>
         <div className="project">projectCard</div>
       </div>
-    </ServiceFocusContainer>
+    </ProjectFocusContainer>
   );
 };
 
-const ServiceFocusContainer = styled.div`
+const ProjectFocusContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -79,4 +81,4 @@ const ServiceFocusContainer = styled.div`
   }
 `;
 
-export default ServiceFocus;
+export default ProjectFocus;

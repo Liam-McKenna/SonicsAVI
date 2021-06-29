@@ -23,7 +23,7 @@ const ProjectsContainer = styled.div`
   align-items: center;
   justify-content: center;
   @media (max-width: 768px) {
-    margin: 0rem 0rem 5rem 0rem;
+    margin: 0rem 0rem 6rem 0rem;
   }
 `;
 
