@@ -1,12 +1,12 @@
 import axios from "axios";
 
-export const httpServices = axios.create({
+export const httpServicesHeroku = axios.create({
   baseURL: "https://sonicsavi-server.herokuapp.com/api/v1/services",
   headers: {
     "Content-type": "application/json",
   },
 });
-export const httpProjects = axios.create({
+export const httpProjectsHeroku = axios.create({
   baseURL: "https://sonicsavi-server.herokuapp.com/api/v1/projects",
   headers: {
     "Content-type": "application/json",

@@ -1,29 +1,41 @@
-//import { httpServices } from "../api/axios-heroku.js";
-import { httpServices } from "../api/axios-localhost.js";
+import { httpServicesHeroku } from "../api/axios-heroku.js";
+import { httpServicesLocal } from "../api/axios-localhost.js";
 //get services from database
 
 class ServicesData {
+  constructor() {
+    if (
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1" ||
+      window.location.hostname === ""
+    ) {
+      this.http = httpServicesLocal;
+    } else {
+      this.http = httpServicesHeroku;
+    }
+  }
+
   //Get
   getAll(page = 0) {
-    return httpServices.get();
+    return this.http.get();
   }
   //Get Single
   getByName(name) {
-    return httpServices.get(
+    return this.http.get(
       `?serviceName=${name.replaceAll(" ", "+").replaceAll("&", "%26")}`
     );
   }
   //Post
   createNewService(data) {
-    return httpServices.post(data);
+    return this.http.post(data);
   }
   //Update
   updateById(data) {
-    return httpServices.put(data);
+    return this.http.put(data);
   }
   //Delete
   deleteById(data) {
-    return httpServices.delete(data);
+    return this.http.delete(data);
   }
 }
 
