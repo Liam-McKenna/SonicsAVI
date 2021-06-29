@@ -22,7 +22,7 @@ class ServicesData {
   //Get Single
   getByName(name) {
     return this.http.get(
-      `?serviceName=${name.replaceAll(" ", "+").replaceAll("&", "%26")}`
+      `?name=${name.replaceAll(" ", "+").replaceAll("&", "%26")}`
     );
   }
   //Post

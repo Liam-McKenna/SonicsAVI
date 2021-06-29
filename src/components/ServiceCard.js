@@ -2,17 +2,14 @@ import React from "react";
 import styled from "styled-components";
 // import thumbnail_1 from "../img/thumbnail_1.png";
 
-const ServiceCard = ({ serviceName, serviceThumbnail }) => {
+const ServiceCard = ({ name, thumbnail }) => {
   // console.log("Card thumbnail: " + serviceThumbnail);
 
   return (
     <CardContainer>
-      <h3>{serviceName}</h3>
+      <h3>{name}</h3>
       <div className="grad"></div>
-      <img
-        src={require(`../img/${serviceThumbnail}`).default}
-        alt={serviceName}
-      />
+      <img src={require(`../img/${thumbnail}`).default} alt={name} />
     </CardContainer>
   );
 };

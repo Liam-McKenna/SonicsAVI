@@ -11,6 +11,7 @@ const ServiceFocus = () => {
   //currentUrl
   const history = useHistory();
   const url = history.location.pathname.replace("/service/", "");
+  // console.log(url);
   //state data for selected Service
   const [service, setService] = useState([]);
   //get all data from DB Axois
@@ -23,6 +24,7 @@ const ServiceFocus = () => {
   const retrieveService = () => {
     ServicesData.getByName(url)
       .then((response) => {
+        console.log(response);
         setService(response.data.services[0]);
       })
       .catch((e) => {
@@ -33,11 +35,11 @@ const ServiceFocus = () => {
   return (
     <ServiceFocusContainer>
       <ImageGallery gallery={service} />
-      <h1>{service.serviceName}</h1>
+      <h1>{service.name}</h1>
       <SpacerBar />
       <span className="serviceText">
-        {service.serviceText &&
-          service.serviceText.split("<br />").map((str) => (
+        {service.text &&
+          service.text.split("<br />").map((str) => (
             <p>
               {str}
               <br />

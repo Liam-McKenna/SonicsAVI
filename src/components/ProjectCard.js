@@ -17,8 +17,9 @@ const ProjectCard = ({ projectName, projectThumbnail, projectTags }) => {
           );
         })}
       </div>
+
       <img
-        src={require(`../img/projects/${projectThumbnail}`).default}
+        src={require(`../img/${projectThumbnail}`).default}
         alt={projectName}
       />
     </ProjectCardContainer>

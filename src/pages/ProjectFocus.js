@@ -11,7 +11,7 @@ import SpacerBar from "../components/SpacerBar";
 const ProjectFocus = () => {
   //currentUrl
   const history = useHistory();
-  const url = history.location.pathname.replace("/projects/", "");
+  const url = history.location.pathname.replace("/project/", "");
   //state data for selected Service
   const [project, setProject] = useState([]);
   //get all data from DB Axois
@@ -25,6 +25,7 @@ const ProjectFocus = () => {
   const retrieveProject = () => {
     ProjectsData.getByName(url)
       .then((response) => {
+        console.log(response);
         setProject(response.data.projects[0]);
       })
       .catch((e) => {
@@ -34,7 +35,7 @@ const ProjectFocus = () => {
 
   return (
     <ProjectFocusContainer>
-      {/* <ImageGallery project={project} /> */}
+      <ImageGallery gallery={project} />
       <h1>{project.name}</h1>
       <SpacerBar />
       <span className="serviceText">
@@ -47,15 +48,6 @@ const ProjectFocus = () => {
             </p>
           ))}
       </span>
-      {/* <h2>Related Projects</h2> */}
-      <SpacerBar />
-
-      {/* TO DO - build project card and reuse here */}
-      <div className="projectsSection">
-        <div className="project">projectCard</div>
-        <div className="project">projectCard</div>
-        <div className="project">projectCard</div>
-      </div>
     </ProjectFocusContainer>
   );
 };

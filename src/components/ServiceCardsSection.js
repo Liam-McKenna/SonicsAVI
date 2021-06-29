@@ -29,11 +29,11 @@ const ServiceCardsSection = () => {
     <ServiceCardsContainer>
       {services.map((service) => {
         return (
-          <Link key={uuidv4()} to={"/service/" + service.serviceName}>
+          <Link key={uuidv4()} to={"/service/" + service.name}>
             <ServiceCard
               key={uuidv4()}
-              serviceName={service.serviceName}
-              serviceThumbnail={service.ServiceThumbnail}
+              name={service.name}
+              thumbnail={service.thumbnail}
             />
           </Link>
         );
