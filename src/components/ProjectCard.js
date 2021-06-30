@@ -76,6 +76,11 @@ const ProjectCardContainer = styled.div`
       border-style: solid;
       border-width: 2px;
       border-radius: 20rem;
+      transition: ${transitionTime};
+      &:hover {
+        transform: scale(1.1);
+        transition: ${transitionTime};
+      }
     }
   }
   img {
