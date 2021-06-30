@@ -111,7 +111,7 @@ const About = () => {
 };
 
 const AboutContainer = styled.div`
-  padding-top: 4rem;
+  padding-top: 1rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -147,7 +147,7 @@ const AboutContainer = styled.div`
 
   .cardContainer {
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

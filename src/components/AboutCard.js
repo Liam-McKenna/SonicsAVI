@@ -19,8 +19,8 @@ const AboutCard = ({ color, img, name, text }) => {
 const secondaryColor = "#1d2034";
 const AboutCardContainer = styled.div`
   margin: 1rem;
-  width: 15rem;
-  height: 15rem;
+  width: 12rem;
+  height: 12rem;
   background-color: ${secondaryColor};
   border-radius: 20px;
   border-color: blue;
@@ -42,9 +42,10 @@ const AboutCardContainer = styled.div`
       border-radius: 360px;
     }
     h3 {
+      font-size: 14px;
     }
     p {
-      font-size: 12px;
+      font-size: 10px;
     }
   }
   @media (max-width: 768px) {
