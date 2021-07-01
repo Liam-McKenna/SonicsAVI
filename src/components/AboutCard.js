@@ -18,8 +18,11 @@ const AboutCard = ({ color, img, name, text }) => {
 
 const secondaryColor = "#1d2034";
 const AboutCardContainer = styled.div`
-  margin: 1rem;
-  width: 20%;
+  margin: 0.5rem;
+  width: 15%;
+  height: 20vh;
+  max-width: 200px;
+  max-height: 220px;
 
   background-color: ${secondaryColor};
   border-radius: 20px;
@@ -49,7 +52,7 @@ const AboutCardContainer = styled.div`
       font-size: 10px;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 750px) {
     width: 40%;
     height: 40%;
     margin: 0.5rem;

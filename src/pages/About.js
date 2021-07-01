@@ -160,7 +160,8 @@ const AboutContainer = styled.div`
 
   .cardContainer {
     width: 100%;
-    max-width: 900px;
+    max-width: 1300px;
+    padding: 0rem 5rem 0rem 5rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
