@@ -101,12 +101,12 @@ const ContactContainer = styled.div`
     }
     input {
       height: 100%;
-      width: 95%;
+      width: 98%;
       max-height: 7%;
       background-color: ${primaryColor};
       border-radius: 360px;
       padding: 0% 2% 0% 2%;
-      margin: 1%;
+      margin: 4px;
       color: white;
       border-style: none;
       :focus {
@@ -115,14 +115,14 @@ const ContactContainer = styled.div`
     }
     textarea {
       height: 100%;
-      width: 95%;
+      width: 98%;
       min-height: 15%;
       max-height: 400px;
       background-color: ${primaryColor};
       color: white;
       border-radius: 10px;
       padding: 2%;
-      margin: 1%;
+      margin: 4px;
       border-style: none;
       resize: none;
       :focus {
@@ -150,12 +150,18 @@ const ContactContainer = styled.div`
     margin-bottom: 1rem;
   }
   @media (max-width: 768px) {
-    height: 1200px;
+    height: 135%;
     justify-content: start;
-    padding-bottom: 25rem;
+    padding: 2rem 0rem 1rem 0rem;
 
     form {
       width: 85%;
+      input {
+        width: 95%;
+      }
+      textarea {
+        width: 95%;
+      }
     }
     .map {
       width: 85%;
