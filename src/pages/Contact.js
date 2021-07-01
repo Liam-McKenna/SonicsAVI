@@ -150,7 +150,7 @@ const ContactContainer = styled.div`
     margin-bottom: 1rem;
   }
   @media (max-width: 768px) {
-    height: 135%;
+    height: 13%;
     justify-content: start;
     padding: 2rem 0rem 1rem 0rem;
 

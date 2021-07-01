@@ -21,11 +21,13 @@ const About = () => {
   const engineersColor = "#F5436E";
   return (
     <AboutContainer>
-      <h1>Our Team</h1>
-      <div className="departmentContainer">
-        <div className="operations">Operations</div>
-        <div className="sales">Sales</div>
-        <div className="engineers">Engineers</div>
+      <div className="topContainer">
+        <h1>Our Team</h1>
+        <div className="departmentContainer">
+          <div className="operations">Operations</div>
+          <div className="sales">Sales</div>
+          <div className="engineers">Engineers</div>
+        </div>
       </div>
 
       <div className="cardContainer">
@@ -125,69 +127,90 @@ const About = () => {
 const AboutContainer = styled.div`
   height: 100vh;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* padding: 0rem 20vw 0rem 20vw; */
+  display: grid;
+  grid-template-rows: 12vh 60vh 12vh;
+  justify-items: center;
   align-items: center;
+  justify-content: center;
   align-content: center;
 
-  h1 {
-    font-size: 4rem;
-  }
-  .departmentContainer {
+  .topContainer {
+    align-self: end;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    .operations {
-      margin: 0.3rem;
-      padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-      color: #0ea3ff;
-      border: 1.5px solid#0ea3ff;
-      border-radius: 1rem 0rem 0rem 1rem;
-    }
-    .sales {
-      margin: 0.3rem;
-      padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-      color: #43f5d5;
-      border: 1.5px solid#43f5d5;
-    }
-    .engineers {
-      margin: 0.3rem;
-      padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-      color: #f5436e;
-      border: 1.5px solid#f5436e;
-      border-radius: 0rem 1rem 1rem 0rem;
+    flex-direction: column;
+    align-items: center;
+    .departmentContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      .operations {
+        width: 25%;
+        margin: 0.3rem;
+        padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+        color: #0ea3ff;
+        border: 1.5px solid#0ea3ff;
+        border-radius: 1rem 0rem 0rem 1rem;
+        text-align: center;
+      }
+      .sales {
+        width: 25%;
+        margin: 0.3rem;
+        padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+        color: #43f5d5;
+        border: 1.5px solid#43f5d5;
+        text-align: center;
+      }
+      .engineers {
+        width: 25%;
+        margin: 0.3rem;
+        padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+        color: #f5436e;
+        border: 1.5px solid#f5436e;
+        border-radius: 0rem 1rem 1rem 0rem;
+        text-align: center;
+      }
     }
   }
 
   .cardContainer {
     width: 100%;
-    height: auto;
-    max-width: 1000px;
-    padding: 0rem 5rem 0rem 5rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 10vw);
+    grid-template-rows: repeat(3, 18vh);
+    grid-gap: 1vh 1vh;
+    justify-items: center;
     align-items: center;
     justify-content: center;
     align-content: center;
   }
 
   .bottomContainer {
-    width: 720px;
-    max-width: 85%;
+    align-self: start;
     height: 100%;
-    max-height: 250px;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    max-width: 85%;
+    display: grid;
+    grid-template-columns: repeat(1, 40vw);
     justify-content: center;
     text-align: center;
-    align-items: center;
+    justify-items: center;
+    p {
+      width: 100%;
+    }
 
     .socials {
-      padding: 1rem;
+      height: 50%;
+      width: 25%;
+      padding: 10px 0px 0px 0px;
+
       img {
-        width: 5rem;
-        height: 3rem;
+        height: 100%;
+        width: 25%;
       }
     }
   }
@@ -197,7 +220,8 @@ const AboutContainer = styled.div`
     margin: 1rem 0rem 10rem 0rem;
 
     .cardContainer {
-      padding: 0rem;
+      grid-template-columns: repeat(3, 20vw);
+      grid-template-rows: repeat(4, 10vh);
     }
     .bottomContainer {
       max-height: 450px;

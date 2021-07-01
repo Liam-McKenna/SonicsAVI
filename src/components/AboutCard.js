@@ -9,8 +9,10 @@ const AboutCard = ({ color, img, name, text }) => {
     <AboutCardContainer>
       <div className="cardContent">
         <img style={border} src={img} alt="" className="profile" />
-        <h3>{name}</h3>
-        <p>{text}</p>
+        <div className="textContainer">
+          <h3>{name}</h3>
+          <p>{text}</p>
+        </div>
       </div>
     </AboutCardContainer>
   );
@@ -18,10 +20,11 @@ const AboutCard = ({ color, img, name, text }) => {
 
 const secondaryColor = "#1d2034";
 const AboutCardContainer = styled.div`
-  height: 10rem;
-  width: 10rem;
-  max-height: 10rem;
-  margin: 0.3rem;
+  align-self: stretch;
+  width: 100%;
+  height: 100%;
+  /* max-width: 15rem; */
+  /* max-height: 5rem; */
   background-color: ${secondaryColor};
   border-radius: 20px;
   display: flex;
@@ -31,6 +34,7 @@ const AboutCardContainer = styled.div`
 
   .cardContent {
     width: 100%;
+    max-width: 100%;
     height: 100%;
     padding: 0rem 0.5rem 0rem 0.5rem;
     display: flex;
@@ -39,21 +43,23 @@ const AboutCardContainer = styled.div`
     justify-content: center;
 
     img {
-      max-height: 70%;
+      height: 50%;
       border-radius: 360px;
     }
-    h3 {
-      padding: 1px;
-      font-size: 14px;
-    }
-    p {
-      font-size: 8px;
+
+    .textContainer {
+      text-align: center;
+      width: 100%;
+      h3 {
+        padding: 0.2px;
+        font-size: 0.7vw;
+      }
+      p {
+        font-size: 0.5vw;
+      }
     }
   }
   @media (max-width: 750px) {
-    height: 10rem;
-    width: 10rem;
-    margin: 0.5rem;
     .cardContent {
       padding: 0.5rem 1rem 1rem 1rem;
       img {
