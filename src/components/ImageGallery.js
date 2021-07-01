@@ -203,16 +203,23 @@ const ImageGalleryContainer = styled.div`
     background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
 
     .modalImg {
-      margin: auto;
       display: block;
-      max-height: 90vh;
-      max-width: 90vh;
+      width: 100vh;
+      background: transparent no-repeat center;
+      background-size: cover;
+
       /* max-width: 700px; */
     }
   }
-
   .modalContainerOn {
     display: block;
+  }
+
+  @media (max-width: 768px) {
+    .modalContainerOff {
+    .modalImg {
+      width: 100vw;
+    }
   }
 `;
 

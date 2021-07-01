@@ -26,7 +26,6 @@ const Contact = () => {
       );
     e.target.reset();
   }
-  console.log(process.env.REACT_APP_GOOGLE_KEY);
   function map() {
     return (
       <GoogleMap
@@ -62,11 +61,13 @@ const Contact = () => {
         />
       </div>
       <SpacerBar />
-      <p>
-        Tallaght Business Centre, Unit 30, Whitestown Rd, Tallaght Business
-        Park, Dublin 24
-        <br /> <br /> +35314902777
-      </p>
+      <div className="bottomDetails">
+        <p>
+          Tallaght Business Centre, Unit 30, Whitestown Rd, Tallaght Business
+          Park, Dublin 24
+          <br /> <br /> +35314902777
+        </p>
+      </div>
     </ContactContainer>
   );
 };
@@ -80,28 +81,32 @@ const ContactContainer = styled.div`
   align-items: center;
   text-align: center;
   justify-content: center;
+  position: absolute;
   form {
-    width: 85%;
+    top: 0;
+    width: 65%;
     height: 100%;
     max-width: 1200px;
-    max-height: 520px;
+    max-height: 50vh;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: ${secondaryColor};
-    padding: 0.5rem;
-    margin: 1rem 2rem 2rem 2rem;
+
+    margin: 1%;
     text-align: center;
     :focus {
       outline: none;
     }
     input {
       height: 100%;
-      max-height: 40px;
+      width: 95%;
+      max-height: 7%;
       background-color: ${primaryColor};
       border-radius: 360px;
-      padding: 0.5rem;
-      margin: 0.5rem;
+      padding: 0% 2% 0% 2%;
+      margin: 1%;
       color: white;
       border-style: none;
       :focus {
@@ -110,13 +115,14 @@ const ContactContainer = styled.div`
     }
     textarea {
       height: 100%;
-      min-height: 150px;
+      width: 95%;
+      min-height: 15%;
       max-height: 400px;
       background-color: ${primaryColor};
       color: white;
       border-radius: 10px;
-      padding: 0.5rem;
-      margin: 0.5rem;
+      padding: 2%;
+      margin: 1%;
       border-style: none;
       resize: none;
       :focus {
@@ -125,22 +131,38 @@ const ContactContainer = styled.div`
     }
     .submit {
       background-color: #00a3ff;
+      width: 65%;
+      text-align: center;
     }
   }
 
   .map {
-    width: 85%;
+    width: 65%;
     height: 100%;
     max-width: 1200px;
-    max-height: 520px;
-    min-height: 320px;
+    max-height: 50vh;
+    min-height: 220px;
     border-radius: 20px;
     overflow: hidden;
+  }
+
+  .bottomDetails {
+    margin-bottom: 1rem;
   }
   @media (max-width: 768px) {
     height: 1200px;
     justify-content: start;
     padding-bottom: 25rem;
+
+    form {
+      width: 85%;
+    }
+    .map {
+      width: 85%;
+    }
+    .bottomDetails {
+      width: 85%;
+    }
   }
 `;
 

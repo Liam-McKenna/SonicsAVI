@@ -156,7 +156,8 @@ const AboutContainer = styled.div`
   }
 
   p {
-    max-width: 700px;
+    width: 700px;
+    max-width: 85%;
     text-align: center;
   }
 `;
