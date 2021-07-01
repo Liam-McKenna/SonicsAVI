@@ -68,8 +68,12 @@ const transitionTime = "200ms ease";
 //styled components
 const Nav = styled.div`
   width: 5rem;
+  height: 80vh;
   position: fixed;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .links {
     text-decoration: none;

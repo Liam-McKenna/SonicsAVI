@@ -6,6 +6,9 @@ import eva from "../img/profiles/eva.png";
 import ken from "../img/profiles/ken.png";
 import rim from "../img/profiles/rim.png";
 import steven from "../img/profiles/steven.png";
+import facebook from "../img/socials/facebook.svg";
+import youtube from "../img/socials/youtube.svg";
+import linkedin from "../img/socials/linkedin.svg";
 
 //components
 import SpacerBar from "../components/SpacerBar";
@@ -99,22 +102,32 @@ const About = () => {
           text="Managing Director - SEO"
         />
       </div>
-      <h1>About Sonics</h1>
-      <SpacerBar />
-      <p>
-        This is a placeholder text for an extensive text area detailing the
-        nitty gritty of sonics and why sonics is a good company to do AV stuff
-        etc etc
-      </p>
+
+      <div className="bottomContainer">
+        <h1>About Sonics</h1>
+        <SpacerBar />
+        <p>
+          This is a placeholder text for an extensive text area detailing the
+          nitty gritty of sonics and why sonics is a good company to do AV stuff
+          etc etc
+        </p>
+
+        <div className="socials">
+          <img src={facebook} alt="fb" />
+          <img src={youtube} alt="yt" />
+          <img src={linkedin} alt="li" />
+        </div>
+      </div>
     </AboutContainer>
   );
 };
 
 const AboutContainer = styled.div`
-  padding-top: 1rem;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   h1 {
@@ -155,10 +168,33 @@ const AboutContainer = styled.div`
     justify-content: center;
   }
 
-  p {
-    width: 700px;
+  .bottomContainer {
+    width: 720px;
     max-width: 85%;
+    height: 100%;
+    max-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
+    align-items: center;
+
+    .socials {
+      padding: 1rem;
+      img {
+        width: 5rem;
+        height: 3rem;
+      }
+    }
+  }
+
+  @media (max-width: 750px) {
+    height: 100%;
+    margin: 1rem 0rem 10rem 0rem;
+
+    .bottomContainer {
+      max-height: 450px;
+    }
   }
 `;
 
