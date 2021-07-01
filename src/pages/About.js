@@ -129,6 +129,7 @@ const AboutContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-content: center;
 
   h1 {
     font-size: 4rem;
@@ -160,13 +161,15 @@ const AboutContainer = styled.div`
 
   .cardContainer {
     width: 100%;
-    max-width: 1300px;
+    height: auto;
+    max-width: 1000px;
     padding: 0rem 5rem 0rem 5rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    align-content: center;
   }
 
   .bottomContainer {
@@ -193,6 +196,9 @@ const AboutContainer = styled.div`
     height: 100%;
     margin: 1rem 0rem 10rem 0rem;
 
+    .cardContainer {
+      padding: 0rem;
+    }
     .bottomContainer {
       max-height: 450px;
     }

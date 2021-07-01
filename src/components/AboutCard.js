@@ -18,49 +18,47 @@ const AboutCard = ({ color, img, name, text }) => {
 
 const secondaryColor = "#1d2034";
 const AboutCardContainer = styled.div`
-  margin: 0.5rem;
-  width: 15%;
-  height: 20vh;
-  max-width: 200px;
-  max-height: 220px;
-
+  height: 10rem;
+  width: 10rem;
+  max-height: 10rem;
+  margin: 0.3rem;
   background-color: ${secondaryColor};
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   .cardContent {
     width: 100%;
     height: 100%;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 0rem 0.5rem 0rem 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
     img {
-      width: 95%;
-      max-width: 20vh;
+      max-height: 70%;
       border-radius: 360px;
     }
     h3 {
-      padding: 2px;
+      padding: 1px;
       font-size: 14px;
     }
     p {
-      font-size: 10px;
+      font-size: 8px;
     }
   }
   @media (max-width: 750px) {
-    width: 40%;
-    height: 40%;
+    height: 10rem;
+    width: 10rem;
     margin: 0.5rem;
     .cardContent {
       padding: 0.5rem 1rem 1rem 1rem;
       img {
-        width: 95%;
-        max-width: 95%;
+        max-height: 70%;
+        border-radius: 360px;
       }
       h3 {
         font-size: 10px;
