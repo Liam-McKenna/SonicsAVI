@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const AboutCard = ({ color, img, name, text }) => {
   const border = {
-    border: `3.0px solid ${color}`,
+    border: `2.0px solid ${color}`,
   };
   return (
     <AboutCardContainer>
@@ -20,11 +20,10 @@ const AboutCard = ({ color, img, name, text }) => {
 
 const secondaryColor = "#1d2034";
 const AboutCardContainer = styled.div`
-  align-self: stretch;
-  width: 100%;
-  height: 100%;
-  /* max-width: 15rem; */
-  /* max-height: 5rem; */
+  align-self: center;
+  width: min(100%);
+  height: min(100%);
+
   background-color: ${secondaryColor};
   border-radius: 20px;
   display: flex;
@@ -35,24 +34,26 @@ const AboutCardContainer = styled.div`
   .cardContent {
     width: 100%;
     max-width: 100%;
-    height: 100%;
-    padding: 0rem 0.5rem 0rem 0.5rem;
+    height: 90%;
+    padding: 0rem 0.3rem 0rem 0.3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
     img {
-      height: 50%;
-      border-radius: 360px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* object-position: center; */
+      border-radius: 100%;
     }
 
     .textContainer {
       text-align: center;
       width: 100%;
       h3 {
-        padding: 0.2px;
-        font-size: 0.7vw;
+        font-size: 1vw;
       }
       p {
         font-size: 0.5vw;
@@ -63,7 +64,7 @@ const AboutCardContainer = styled.div`
     .cardContent {
       padding: 0.5rem 1rem 1rem 1rem;
       img {
-        max-height: 70%;
+        /* max-height: 70%; */
         border-radius: 360px;
       }
       h3 {

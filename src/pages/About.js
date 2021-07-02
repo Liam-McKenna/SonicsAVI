@@ -127,9 +127,9 @@ const About = () => {
 const AboutContainer = styled.div`
   height: 100vh;
   width: 100%;
-  /* padding: 0rem 20vw 0rem 20vw; */
   display: grid;
-  grid-template-rows: 12vh 60vh 12vh;
+  grid-template-rows: 1fr 3fr 2fr;
+  grid-gap: 1vh 1vh;
   justify-items: center;
   align-items: center;
   justify-content: center;
@@ -180,8 +180,8 @@ const AboutContainer = styled.div`
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 10vw);
-    grid-template-rows: repeat(3, 18vh);
+    grid-template-columns: repeat(6, 10vw);
+    grid-template-rows: repeat(2, 28vh);
     grid-gap: 1vh 1vh;
     justify-items: center;
     align-items: center;
@@ -191,11 +191,10 @@ const AboutContainer = styled.div`
 
   .bottomContainer {
     align-self: start;
-    height: 100%;
+
     width: 100%;
-    max-width: 85%;
     display: grid;
-    grid-template-columns: repeat(1, 40vw);
+    grid-template-columns: repeat(1, 60vw);
     justify-content: center;
     text-align: center;
     justify-items: center;
@@ -204,8 +203,8 @@ const AboutContainer = styled.div`
     }
 
     .socials {
-      height: 50%;
-      width: 25%;
+      height: 70%;
+      width: 20%;
       padding: 10px 0px 0px 0px;
 
       img {
@@ -220,7 +219,7 @@ const AboutContainer = styled.div`
     margin: 1rem 0rem 10rem 0rem;
 
     .cardContainer {
-      grid-template-columns: repeat(3, 20vw);
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(4, 10vh);
     }
     .bottomContainer {
