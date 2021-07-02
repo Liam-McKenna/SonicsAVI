@@ -68,7 +68,7 @@ const transitionTime = "200ms ease";
 //styled components
 const Nav = styled.div`
   width: 5rem;
-  height: 80vh;
+  height: 90vh;
   position: fixed;
   z-index: 10;
   display: flex;

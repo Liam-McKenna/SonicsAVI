@@ -24,9 +24,15 @@ const About = () => {
       <div className="topContainer">
         <h1>Our Team</h1>
         <div className="departmentContainer">
-          <div className="operations">Operations</div>
-          <div className="sales">Sales</div>
-          <div className="engineers">Engineers</div>
+          <div className="operations">
+            <h3>Operations</h3>
+          </div>
+          <div className="sales">
+            <h3>Sales</h3>
+          </div>
+          <div className="engineers">
+            <h3>Engineers</h3>
+          </div>
         </div>
       </div>
 
@@ -129,7 +135,7 @@ const AboutContainer = styled.div`
   width: 100%;
   display: grid;
   grid-template-rows: 1fr auto 1fr;
-  grid-gap: 1vh 1vh;
+  grid-gap: 2vh 2vh;
   justify-items: center;
   align-items: center;
   justify-content: center;
@@ -145,36 +151,41 @@ const AboutContainer = styled.div`
     justify-content: flex-end;
 
     .departmentContainer {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
+      width: 70%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 1vh 1vh;
       align-items: center;
       justify-content: center;
+
       .operations {
-        width: 25%;
-        margin: 0.3rem;
+        width: 100%;
         padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-        color: #0ea3ff;
         border: 1.5px solid#0ea3ff;
         border-radius: 1rem 0rem 0rem 1rem;
         text-align: center;
+        h3 {
+          color: #0ea3ff;
+        }
       }
       .sales {
-        width: 25%;
-        margin: 0.3rem;
+        width: 100%;
         padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-        color: #43f5d5;
         border: 1.5px solid#43f5d5;
         text-align: center;
+        h3 {
+          color: #43f5d5;
+        }
       }
       .engineers {
-        width: 25%;
-        margin: 0.3rem;
+        width: 100%;
         padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-        color: #f5436e;
         border: 1.5px solid#f5436e;
         border-radius: 0rem 1rem 1rem 0rem;
         text-align: center;
+        h3 {
+          color: #f5436e;
+        }
       }
     }
   }
@@ -191,14 +202,15 @@ const AboutContainer = styled.div`
 
   .bottomContainer {
     align-self: start;
-
     width: 100%;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(1, 60vw);
     justify-content: center;
     text-align: center;
     justify-items: center;
     p {
+      margin-top: 0.5vh;
       width: 100%;
     }
 

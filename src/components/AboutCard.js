@@ -53,28 +53,11 @@ const AboutCardContainer = styled.div`
     text-align: center;
     width: 100%;
   }
-  h3 {
-    font-size: 1rem;
-  }
-  p {
-    font-size: 0.5rem;
-  }
 
-  @media (max-width: 1140px) {
-    h3 {
-      font-size: 0.6rem;
-    }
-  }
   @media (max-width: 750px) {
     img {
       width: 85%;
       height: 85%;
-    }
-    h3 {
-      font-size: 0.8rem;
-    }
-    p {
-      font-size: 0.5rem;
     }
   }
 `;
