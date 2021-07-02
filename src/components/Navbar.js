@@ -260,6 +260,9 @@ const Nav = styled.div`
     .phoneAndEmail {
       display: none;
     }
+    .logo {
+      display: none;
+    }
   }
 `;
 

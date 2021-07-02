@@ -20,10 +20,9 @@ const AboutCard = ({ color, img, name, text }) => {
 
 const secondaryColor = "#1d2034";
 const AboutCardContainer = styled.div`
-  align-self: center;
+  /* align-self: center; */
   width: min(100%);
-  height: min(100%);
-
+  aspect-ratio: 1/1;
   background-color: ${secondaryColor};
   border-radius: 20px;
   display: flex;
@@ -40,41 +39,42 @@ const AboutCardContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      /* object-position: center; */
-      border-radius: 100%;
-    }
+  img {
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+    /* object-position: center; */
+    border-radius: 100%;
+  }
 
-    .textContainer {
-      text-align: center;
-      width: 100%;
-      h3 {
-        font-size: 1vw;
-      }
-      p {
-        font-size: 0.5vw;
-      }
+  .textContainer {
+    text-align: center;
+    width: 100%;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.5rem;
+  }
+
+  @media (max-width: 1140px) {
+    h3 {
+      font-size: 0.6rem;
     }
   }
   @media (max-width: 750px) {
-    .cardContent {
-      padding: 0.5rem 1rem 1rem 1rem;
-      img {
-        /* max-height: 70%; */
-        border-radius: 360px;
-      }
-      h3 {
-        font-size: 10px;
-        text-align: center;
-      }
-      p {
-        font-size: 8px;
-        text-align: center;
-      }
+    img {
+      width: 85%;
+      height: 85%;
+    }
+    h3 {
+      font-size: 0.8rem;
+    }
+    p {
+      font-size: 0.5rem;
     }
   }
 `;

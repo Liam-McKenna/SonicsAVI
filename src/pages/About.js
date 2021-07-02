@@ -35,73 +35,73 @@ const About = () => {
           color={opsColor}
           img={steven}
           name="Steven McKenna"
-          text="Managing Director - SEO"
+          text="Managing Director"
         />
         <AboutCard
           color={opsColor}
           img={rim}
           name="Steven McKenna"
-          text="Managing Director - SEO"
+          text="Managing Director"
         />
         <AboutCard
           color={opsColor}
           img={ken}
           name="Steven McKenna"
-          text="Managing Director - SEO"
+          text="Managing Director"
         />
         <AboutCard
           color={opsColor}
           img={eva}
           name="Steven McKenna"
-          text="Managing Director - SEO"
+          text="Managing Director"
         />
         <AboutCard
           color={salesColor}
           img={eva}
           name="Steven McKenna"
-          text="Managing Director - SEO"
+          text="Managing Director"
         />
         <AboutCard
           color={salesColor}
           img={rim}
           name="Steven McKenna"
-          text="Managing Director - SEO"
+          text="Managing Director"
         />
         <AboutCard
           color={engineersColor}
           img={steven}
           name="Steven McKenna"
-          text="Managing Director - SEO"
+          text="Managing Director"
         />
         <AboutCard
           color={engineersColor}
           img={ken}
           name="Steven McKenna"
-          text="Managing Director - SEO"
+          text="Managing Director"
         />
         <AboutCard
           color={engineersColor}
           img={rim}
           name="Steven McKenna"
-          text="Managing Director - SEO"
+          text="Managing Director"
         />
         <AboutCard
           color={engineersColor}
           img={steven}
           name="Steven McKenna"
-          text="Managing Director - SEO"
+          text="Managing Director"
         />
         <AboutCard
           color={engineersColor}
           img={ken}
           name="Steven McKenna"
-          text="Managing Director - SEO"
+          text="Managing Director"
         />
         <AboutCard
           color={engineersColor}
           img={rim}
           name="Steven McKenna"
-          text="Managing Director - SEO"
+          text="Managing Director"
         />
       </div>
 
@@ -128,7 +128,7 @@ const AboutContainer = styled.div`
   height: 100vh;
   width: 100%;
   display: grid;
-  grid-template-rows: 1fr 3fr 2fr;
+  grid-template-rows: 1fr auto 1fr;
   grid-gap: 1vh 1vh;
   justify-items: center;
   align-items: center;
@@ -137,10 +137,13 @@ const AboutContainer = styled.div`
 
   .topContainer {
     align-self: end;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
+
     .departmentContainer {
       width: 100%;
       display: flex;
@@ -177,16 +180,13 @@ const AboutContainer = styled.div`
   }
 
   .cardContainer {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: auto;
     display: grid;
-    grid-template-columns: repeat(6, 10vw);
-    grid-template-rows: repeat(2, 28vh);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 3fr);
     grid-gap: 1vh 1vh;
-    justify-items: center;
     align-items: center;
-    justify-content: center;
-    align-content: center;
   }
 
   .bottomContainer {
@@ -216,11 +216,11 @@ const AboutContainer = styled.div`
 
   @media (max-width: 750px) {
     height: 100%;
-    margin: 1rem 0rem 10rem 0rem;
+    grid-template-rows: auto 3fr auto;
 
     .cardContainer {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(4, 10vh);
+      grid-template-rows: 6fr;
     }
     .bottomContainer {
       max-height: 450px;
