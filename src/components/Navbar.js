@@ -209,6 +209,7 @@ const Nav = styled.div`
 
   //mobile settings
   @media (max-width: 768px) {
+    height: 12vh;
     width: 100%;
     bottom: 0;
     display: flex;
