@@ -24,7 +24,7 @@ h1{
     font-size: calc(1.8vh + 1.8vw);
     color: white;
 }
- h2 , h3, span, p{
+ h2 , h3, span, p, input{
     color: white;
     font-size: calc(.5vh + .5vw);
   }
@@ -34,7 +34,7 @@ h1{
     font-size: calc(2.5vh + 2.5vw);
     color: white;
 }
- h2 , h3, span, p{
+ h2 , h3, span, p, input, textarea{
     color: white;
     font-size: calc(.8vh + .8vw);
   }

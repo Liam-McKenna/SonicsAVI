@@ -45,11 +45,7 @@ const Contact = () => {
         <input type="email" placeholder="Email" name="email" />
         <input type="phone" placeholder="Phone Number" name="phone" />
 
-        <textarea
-          placeholder="Your Message"
-          rows="20"
-          name="message"
-        ></textarea>
+        <textarea placeholder="Your Message" name="message"></textarea>
         <input type="submit" className="submit" value="Send Message" />
       </form>
       <div className="map">
@@ -60,8 +56,8 @@ const Contact = () => {
           mapElement={<div style={{ height: "100%" }} />}
         />
       </div>
-      <SpacerBar />
       <div className="bottomDetails">
+        <SpacerBar />
         <p>
           Tallaght Business Centre, Unit 30, Whitestown Rd, Tallaght Business
           Park, Dublin 24
@@ -77,29 +73,34 @@ const ContactContainer = styled.div`
   height: 100vh;
   width: 100vw;
   display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-rows: 1fr 10fr auto 1fr;
+  grid-template-areas:
+    ". . . ."
+    ". contactForm map ."
+    ". bottom bottom ."
+    ". . . .";
+
   form {
-    top: 0;
-    width: 65%;
+    grid-area: contactForm;
+    width: 100%;
     height: 100%;
-    max-width: 1200px;
-    max-height: 50vh;
+    padding: 1em;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: ${secondaryColor};
-
-    margin: 1%;
     text-align: center;
     :focus {
       outline: none;
     }
     input {
-      height: 100%;
+      height: 20%;
       width: 98%;
-      max-height: 7%;
       background-color: ${primaryColor};
-      border-radius: 360px;
+      border-radius: 5px;
       padding: 0% 2% 0% 2%;
       margin: 4px;
       color: white;
@@ -111,11 +112,9 @@ const ContactContainer = styled.div`
     textarea {
       height: 100%;
       width: 98%;
-      min-height: 15%;
-      max-height: 400px;
       background-color: ${primaryColor};
       color: white;
-      border-radius: 10px;
+      border-radius: 5px;
       padding: 2%;
       margin: 4px;
       border-style: none;
@@ -126,44 +125,36 @@ const ContactContainer = styled.div`
     }
     .submit {
       background-color: #00a3ff;
-      width: 65%;
       text-align: center;
     }
   }
 
   .map {
-    width: 65%;
+    grid-area: map;
+    width: 100%;
     height: 100%;
-    max-width: 1200px;
-    max-height: 50vh;
-    min-height: 220px;
     border-radius: 20px;
     overflow: hidden;
   }
 
   .bottomDetails {
-    margin-bottom: 1rem;
+    grid-area: bottom;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
   }
   @media (max-width: 768px) {
-    height: 13%;
-    justify-content: start;
-    padding: 2rem 0rem 1rem 0rem;
-
-    form {
-      width: 85%;
-      input {
-        width: 95%;
-      }
-      textarea {
-        width: 95%;
-      }
-    }
-    .map {
-      width: 85%;
-    }
-    .bottomDetails {
-      width: 85%;
-    }
+    grid-template-columns: 2em 3fr 2em;
+    grid-template-rows: 2em 1fr 1fr 5em;
+    grid-template-areas:
+      ". . ."
+      ". contactForm ."
+      ". map ."
+      ". bottom ."
+      ". . .";
   }
 `;
 
