@@ -45,15 +45,19 @@ const ServiceCardsSection = () => {
 //CSS Vars
 
 const ServiceCardsContainer = styled.div`
-  margin-top: 1rem;
-  width: 70rem;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
+  grid-area: services;
+  width: 100%;
+  display: grid;
+  grid-gap: calc(0.5vh + 0.5vw);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   border-radius: 1rem;
+
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: calc(1vh + 1vw);
+  }
 `;
 
 export default ServiceCardsSection;

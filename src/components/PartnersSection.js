@@ -51,6 +51,7 @@ const PartnersSection = () => {
 };
 
 const PartnersContainer = styled.div`
+  grid-area: partners;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +72,7 @@ const PartnersContainer = styled.div`
     }
 
     img {
-      width: 6rem;
+      width: calc(2vh + 2vw);
       margin: 0rem 1rem 0rem 1rem;
     }
   }

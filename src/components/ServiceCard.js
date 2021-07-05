@@ -19,15 +19,14 @@ const transitionTime = "200ms ease";
 
 const CardContainer = styled.div`
   position: relative;
-  margin: 0.5rem;
-  width: 16rem;
-  height: 16rem;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
   overflow: hidden;
   transition: ${transitionTime};
 
   :hover {
-    transform: scale(1.08);
+    transform: scale(1.04);
     transition: ${transitionTime};
   }
 
@@ -51,11 +50,11 @@ const CardContainer = styled.div`
 
   img {
     height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   @media (max-width: 768px) {
-    width: 9rem;
-    height: 9rem;
     h3 {
       font-size: 0.7rem;
       bottom: 0.5rem;

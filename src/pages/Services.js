@@ -20,13 +20,22 @@ const Services = () => {
 };
 
 const ServiceContainer = styled.div`
-  padding-top: 2rem;
+  height: 100vh;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-gap: calc(0.3vh + 0.3vw);
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 0.5fr auto 1fr auto 1fr;
+  grid-template-areas:
+    ". . ."
+    ". top . "
+    ". services . "
+    ". partners ."
+    ". . .";
   @media (max-width: 768px) {
+    grid-template-columns: 0.1fr 4fr 0.1fr;
+    grid-template-rows: 0.5fr auto 1fr auto 1fr;
+    grid-gap: calc(1vh + 1vw);
     margin: 0rem 0rem 6rem 0rem;
   }
 `;
