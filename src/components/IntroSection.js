@@ -24,9 +24,13 @@ const IntroContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: ${secondaryColor};
+  background-color: ${secondaryColor}50;
   border-radius: 1rem;
-  /* margin-left: 5rem; */
+  position: relative;
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+
+  /* content: ""; */
 
   .introSection {
     width: 100%;
@@ -44,10 +48,6 @@ const IntroContainer = styled.div`
       height: 0.25rem;
       background-color: ${BrightBlue};
       border-radius: 10rem;
-    }
-
-    p {
-      max-width: 50rem;
     }
   }
 `;

@@ -44,7 +44,8 @@ const ProjectCardContainer = styled.div`
   border-radius: 10px;
   overflow: hidden;
   transition: ${transitionTime};
-  background-color: ${secondaryColor};
+  background-color: ${secondaryColor}50;
+  backdrop-filter: blur(1px);
 
   :hover {
     transform: scale(1.02);

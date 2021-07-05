@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+import bg from "../img/bg.svg";
 //CSS Variables
 const primaryColor = "#0E0F1A";
 // const secondaryColor = "#1d2034";
@@ -15,7 +15,9 @@ const GlobalStyles = createGlobalStyle`
 }
 
 body{
-    background: ${primaryColor};
+    background-color: ${primaryColor};
+    background-image: url(${bg});
+
 }
 
 

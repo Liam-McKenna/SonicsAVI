@@ -19,16 +19,21 @@ const AboutCard = ({ color, img, name, text }) => {
 };
 
 const secondaryColor = "#1d2034";
+const transitionTime = "200ms ease";
 const AboutCardContainer = styled.div`
-  /* align-self: center; */
   width: min(100%);
   aspect-ratio: 1/1;
-  background-color: ${secondaryColor};
+  background-color: ${secondaryColor}50;
+  backdrop-filter: blur(1px);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: ${transitionTime};
+  &:hover {
+    transform: scale(1.05);
+  }
 
   .cardContent {
     width: 100%;

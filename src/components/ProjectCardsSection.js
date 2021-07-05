@@ -51,7 +51,7 @@ const ProjectsContainer = styled.div`
   height: 100%;
   width: 100%;
   display: grid;
-  grid-gap: calc(0.3vh + 0.3vw);
+  grid-gap: calc(0.5vh + 0.5vw);
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   border-radius: 1rem;

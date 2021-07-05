@@ -91,7 +91,8 @@ const ContactContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: ${secondaryColor};
+    background-color: ${secondaryColor}50;
+    backdrop-filter: blur(1px);
     text-align: center;
     :focus {
       outline: none;
