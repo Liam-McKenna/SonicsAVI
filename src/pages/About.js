@@ -134,7 +134,7 @@ const AboutContainer = styled.div`
   height: 100vh;
   width: 100%;
   display: grid;
-  grid-template-rows: 1fr auto 1fr;
+  grid-template-rows: 0.5fr auto 1fr;
   grid-gap: 2vh 2vh;
   justify-items: center;
   align-items: center;

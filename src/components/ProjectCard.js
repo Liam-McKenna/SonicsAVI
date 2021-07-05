@@ -29,34 +29,30 @@ const ProjectCard = ({ projectName, projectThumbnail, projectTags }) => {
 //CSS Vars
 const transitionTime = "200ms ease";
 const secondaryColor = "#1d2034";
-
 const projectorColor = "#FF6388";
 const speakerColor = "#00FFFF";
 const touchscreenColor = "#60FFC6";
 const mnoitorsColor = "#E374FF";
 const ProjectCardContainer = styled.div`
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin: 0.5rem;
-  width: 22rem;
   text-decoration: none;
-  height: 20rem;
   border-radius: 10px;
   overflow: hidden;
   transition: ${transitionTime};
   background-color: ${secondaryColor};
 
   :hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     transition: ${transitionTime};
   }
   h2 {
     margin: 0.5rem 0rem 0rem 0rem;
     text-align: center;
-    bottom: 1rem;
-    left: 1rem;
     z-index: 1;
     width: 100%;
     text-decoration: none;
@@ -64,17 +60,19 @@ const ProjectCardContainer = styled.div`
   .tagContainer {
     display: flex;
     justify-content: center;
+    text-align: center;
     text-decoration: none;
-    width: 80%;
-    margin: 0.5rem;
+    width: 100%;
+    margin: calc(0.3vh + 0.3vw);
     p {
-      font-size: 11px;
+      font-size: calc(0.3vh + 0.3vw);
+      width: 100%;
       font-weight: bold;
       margin: 0.2rem;
-      padding: 0.2rem 0.3rem 0.2rem 0.3rem;
+      padding: calc(0.1vh + 0.1vw);
       color: white;
       border-style: solid;
-      border-width: 2px;
+      border-width: calc(0.05vh + 0.05vw);
       border-radius: 20rem;
       transition: ${transitionTime};
       &:hover {
@@ -85,11 +83,11 @@ const ProjectCardContainer = styled.div`
   }
   img {
     height: 100%;
-    width: 120%;
+    width: 100%;
+    object-fit: cover;
   }
 
   @media (max-width: 768px) {
-    width: 18rem;
   }
 `;
 export default ProjectCard;

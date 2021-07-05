@@ -18,8 +18,8 @@ const secondaryColor = "#1d2034";
 const BrightBlue = "#00FFFF";
 
 const IntroContainer = styled.div`
-  width: 70rem;
-  max-width: 90%;
+  grid-area: top;
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;

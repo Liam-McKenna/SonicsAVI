@@ -147,9 +147,9 @@ const ContactContainer = styled.div`
     width: 100%;
   }
   @media (max-width: 768px) {
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     grid-template-columns: 0.1em 3fr 0.1em;
-    grid-template-rows: 0.1em 1fr 1fr 5rem;
+    grid-template-rows: 0.01fr 1fr 1fr 8rem;
     grid-template-areas:
       ". . ."
       ". contactForm ."
