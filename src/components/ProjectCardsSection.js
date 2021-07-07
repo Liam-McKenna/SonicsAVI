@@ -51,7 +51,7 @@ const ProjectCardsContainer = styled.div`
   height: 100%;
   width: 100%;
   display: grid;
-  justify-items: center;
+  /* justify-items: center; */
   align-items: start;
   /* overflow: hidden; */
   grid-gap: calc(0.5vh + 0.5vw);

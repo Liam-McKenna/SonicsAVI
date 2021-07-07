@@ -17,12 +17,10 @@ const ProjectCard = ({ projectName, projectThumbnail, projectTags }) => {
           );
         })}
       </div>
-      <div className="imgContainer">
-        <img
-          src={require(`../img/${projectThumbnail}`).default}
-          alt={projectName}
-        />
-      </div>
+      <img
+        src={require(`../img/${projectThumbnail}`).default}
+        alt={projectName}
+      />
     </ProjectCardContainer>
   );
 };
@@ -86,10 +84,6 @@ const ProjectCardContainer = styled.div`
     }
   }
 
-  .imgContainer {
-    width: 100%;
-    height: 100%;
-  }
   img {
     width: 100%;
     height: 100%;
