@@ -20,6 +20,7 @@ const BrightBlue = "#00FFFF";
 const IntroContainer = styled.div`
   grid-area: top;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -33,8 +34,9 @@ const IntroContainer = styled.div`
   /* content: ""; */
 
   .introSection {
+    height: 100%;
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
     color: white;
     display: flex;
     justify-content: center;

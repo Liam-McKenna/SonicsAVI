@@ -74,6 +74,7 @@ const Nav = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  filter: drop-shadow(10px 10px 10px #111111);
 
   .links {
     text-decoration: none;
@@ -262,7 +263,7 @@ const Nav = styled.div`
       display: none;
     }
     .logo {
-      display: none;
+      /* display: none; */
     }
   }
 `;

@@ -17,11 +17,12 @@ const ProjectCard = ({ projectName, projectThumbnail, projectTags }) => {
           );
         })}
       </div>
-
-      <img
-        src={require(`../img/${projectThumbnail}`).default}
-        alt={projectName}
-      />
+      <div className="imgContainer">
+        <img
+          src={require(`../img/${projectThumbnail}`).default}
+          alt={projectName}
+        />
+      </div>
     </ProjectCardContainer>
   );
 };
@@ -34,7 +35,9 @@ const speakerColor = "#00FFFF";
 const touchscreenColor = "#60FFC6";
 const mnoitorsColor = "#E374FF";
 const ProjectCardContainer = styled.div`
+  align-self: center;
   height: 100%;
+  max-height: calc(14vh + 8vw);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -82,9 +85,15 @@ const ProjectCardContainer = styled.div`
       }
     }
   }
-  img {
-    height: 100%;
+
+  .imgContainer {
     width: 100%;
+    height: 100%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    /* max-height: calc(8vh + 8vw); */
     object-fit: cover;
   }
 
